@@ -4,18 +4,9 @@ import {
 	ListItemText,
 	Typography,
 } from '@mui/material';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import SearchIcon from '@mui/icons-material/Search';
-import AddchartIcon from '@mui/icons-material/Addchart';
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-const ItemIcon = (props) => {
-	const { slug } = props;
-	if (slug === '/') return <SearchIcon />;
-	else if (slug === '/watchlist') return <ShowChartIcon />;
-	else if (slug === '/details') return <AddchartIcon />;
-};
 
 const MenuItem = (props) => {
 	const location = useLocation();
@@ -44,7 +35,7 @@ const MenuItem = (props) => {
                         }),
 					}}
 				>
-					{<ItemIcon slug={props.menuSlug} />}
+					{props.icon}
 				</ListItemIcon>
 				<ListItemText
 					sx={{ opacity: props.open ? 1 : 0 }}
