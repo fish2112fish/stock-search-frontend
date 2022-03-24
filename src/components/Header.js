@@ -19,7 +19,7 @@ const Header = (props) => {
 		>
       
 			{location.pathname  !== '/' && ( // Show header logo on non-homepage pages
-				<img
+				<img alt='Header Logo'
 					src={logo}
 					style={{
 						...(props.isMobile

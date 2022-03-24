@@ -1,3 +1,5 @@
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
 	ListItemButton,
 	ListItemIcon,
@@ -7,17 +9,18 @@ import {
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SearchIcon from '@mui/icons-material/Search';
 import AddchartIcon from '@mui/icons-material/Addchart';
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useTheme } from '@mui/styles';
+
 
 const ItemIcon = (props) => {
 	const { slug } = props;
 	if (slug === '/') return <SearchIcon />;
-	else if (slug === '/watchlist') return <ShowChartIcon />;
-	else if (slug === '/details') return <AddchartIcon />;
+	else if (slug === '/watchlist') return <AddchartIcon />;
+	else if (slug === '/details') return <ShowChartIcon />;
 };
 
 const MenuItem = (props) => {
+    const theme = useTheme();
 	const location = useLocation();
 
 	return (
@@ -40,7 +43,8 @@ const MenuItem = (props) => {
                         padding: '10px',
                         borderRadius: '25px',
                         ...(location.pathname === `${props.menuSlug}` && {
-                            backgroundColor: '#82befb',
+                            backgroundColor: theme.palette.primary.main,
+                            color:'#fff'
                         }),
 					}}
 				>
