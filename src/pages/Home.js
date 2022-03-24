@@ -1,11 +1,11 @@
 import React from 'react';
-import ContentCointaner from '../components/ContentCointaner';
+import ContentContainer from '../components/ContentContainer';
 import logo from '../assets/img/sm-logo.png';
 
 const Home = () => {
-	return <ContentCointaner>
+	return <ContentContainer>
     <img src={logo} style={{margin:'0px auto', display:'block', width:'85%',maxWidth:'700px'}} />
-  </ContentCointaner>;
+  </ContentContainer>;
 };
 
 export default Home;

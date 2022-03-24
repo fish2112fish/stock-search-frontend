@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ContentCointaner from '../components/ContentCointaner';
+import ContentContainer from '../components/ContentContainer';
 
 const Details = () => {
     let { id } = useParams();
-	return <ContentCointaner>{id?id:"Please choose a stock first"}</ContentCointaner>;
+	return <ContentContainer>{id?id:"Please choose a stock first"}</ContentContainer>;
 };
 
 export default Details;
