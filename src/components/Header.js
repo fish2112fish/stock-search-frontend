@@ -20,7 +20,7 @@ const Header = (props) => {
 			}}
 		>
       
-			{isNotHomepage && (
+			{isNotHomepage && ( // Show header logo on non-homepage pages
 				<img
 					src={logo}
 					alt="Stock Monkey Logo"
