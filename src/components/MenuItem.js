@@ -9,7 +9,6 @@ import {
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SearchIcon from '@mui/icons-material/Search';
 import AddchartIcon from '@mui/icons-material/Addchart';
-import { useTheme } from '@mui/styles';
 
 
 const ItemIcon = (props) => {
@@ -20,7 +19,6 @@ const ItemIcon = (props) => {
 };
 
 const MenuItem = (props) => {
-    const theme = useTheme();
 	const location = useLocation();
 
 	return (
@@ -43,7 +41,7 @@ const MenuItem = (props) => {
                         padding: '10px',
                         borderRadius: '25px',
                         ...(location.pathname === `${props.menuSlug}` && {
-                            backgroundColor: theme.palette.primary.main,
+                            backgroundColor: (theme) => theme.palette.primary.main,
                             color:'#fff'
                         }),
 					}}
