@@ -24,12 +24,8 @@ const theme = createTheme({
 });
 
 export default function App() {
-	const isMobileDevice = () => {
-		if (window.innerWidth < 500) return true;
-		else return false;
-	};
 
-	const isMobile = isMobileDevice();
+	const isMobile = window.innerWidth < 500
 
 	return (
 		<ThemeProvider theme={theme}>

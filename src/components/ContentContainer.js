@@ -1,7 +1,7 @@
-import { Box } from '@mui/system'
+import Box from '@mui/material/Box';
 import React from 'react'
 
-const ContentCointaner = (props) => {
+const ContentContainer = (props) => {
   return (
     <Box sx={{margin:'50px 0px 0px 0px'}}>
         {props.children}
@@ -9,4 +9,4 @@ const ContentCointaner = (props) => {
   )
 }
 
-export default ContentCointaner
+export default ContentContainer
