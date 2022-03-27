@@ -6,7 +6,7 @@ import HomeSearch from '../components/search/HomeSearch';
 
 const Home = () => {
 	return (
-		<ContentCointaner>
+		<ContentCointainer>
 			<img
 				alt="Homepage Logo"
 				src={logo}
@@ -20,7 +20,7 @@ const Home = () => {
 
         <HomeSearch />
 
-		</ContentCointaner>
+		</ContentCointainer>
 	);
 
 };
