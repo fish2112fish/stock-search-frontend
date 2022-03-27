@@ -6,17 +6,6 @@ import {
 	ListItemText,
 	Typography,
 } from '@mui/material';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import SearchIcon from '@mui/icons-material/Search';
-import AddchartIcon from '@mui/icons-material/Addchart';
-
-
-const ItemIcon = (props) => {
-	const { slug } = props;
-	if (slug === '/') return <SearchIcon />;
-	else if (slug === '/watchlist') return <AddchartIcon />;
-	else if (slug === '/details') return <ShowChartIcon />;
-};
 
 const MenuItem = (props) => {
 	const location = useLocation();
@@ -46,7 +35,7 @@ const MenuItem = (props) => {
                         }),
 					}}
 				>
-					{<ItemIcon slug={props.menuSlug} />}
+					{props.icon}
 				</ListItemIcon>
 				<ListItemText
 					sx={{ opacity: props.open ? 1 : 0 }}

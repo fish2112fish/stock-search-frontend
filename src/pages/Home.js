@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentCointaner from '../components/ContentCointaner';
+import ContentContainer from '../components/ContentContainer';
 import logo from '../assets/img/sm-logo.png';
 import HomeSearch from '../components/search/HomeSearch';
 
@@ -22,6 +22,7 @@ const Home = () => {
 
 		</ContentCointaner>
 	);
+
 };
 
 export default Home;

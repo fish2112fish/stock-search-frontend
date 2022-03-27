@@ -1,11 +1,11 @@
 import React from 'react';
-import ContentCointaner from '../components/ContentCointaner';
+import ContentContainer from '../components/ContentContainer';
 
 const Watchlist = () => {
 	return (
-		<ContentCointaner>
+		<ContentContainer>
 			<div>Watchlist</div>
-		</ContentCointaner>
+		</ContentContainer>
 	);
 };
 
