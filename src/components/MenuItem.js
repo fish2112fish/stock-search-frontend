@@ -1,11 +1,12 @@
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import {
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
 	Typography,
 } from '@mui/material';
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+
 
 const MenuItem = (props) => {
 	const location = useLocation();
@@ -30,8 +31,7 @@ const MenuItem = (props) => {
                         padding: '10px',
                         borderRadius: '25px',
                         ...(location.pathname === `${props.menuSlug}` && {
-                            backgroundColor: (theme) => theme.palette.primary.main,
-                            color:'#fff'
+                            backgroundColor: '#82befb',
                         }),
 					}}
 				>
