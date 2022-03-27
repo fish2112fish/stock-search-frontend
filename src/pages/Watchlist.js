@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ContentContainer from '../components/ContentContainer';
 
 const Watchlist = () => {
-  return (
-    <div>Watchlist</div>
-  )
-}
+	return (
+		<ContentContainer>
+			<div>Watchlist</div>
+		</ContentContainer>
+	);
+};
 
-export default Watchlist
+export default Watchlist;
