@@ -1,11 +1,9 @@
-import React from 'react';
-import ContentContainer from '../components/ContentContainer';
-import logo from '../assets/img/sm-logo.png';
+import React from 'react'
 
 const Home = () => {
-	return <ContentContainer>
-    <img src={logo} style={{margin:'0px auto', display:'block', width:'85%',maxWidth:'700px'}} />
-  </ContentContainer>;
-};
+  return (
+    <div>Home</div>
+  )
+}
 
-export default Home;
+export default Home
