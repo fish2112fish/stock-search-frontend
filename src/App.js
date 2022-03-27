@@ -11,12 +11,8 @@ import Home from './pages/Home';
 import MobileMenuDrawer from './components/MobileMenuDrawer';
 
 export default function App() {
-	const isMobileDevice = () => {
-		if (window.innerWidth < 500) return true;
-		else return false;
-	};
 
-	const isMobile = isMobileDevice();
+	const isMobile = window.innerWidth < 500
 
 	return (
 		<Box sx={{ display: 'flex' }}>

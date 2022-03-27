@@ -6,6 +6,8 @@ import logo from '../assets/img/sm-logo.png';
 const Header = (props) => {
 	const location = useLocation();
 
+	const isNotHomepage = location.pathname !== '/'
+
 	return (
 		<Box
 			sx={{
@@ -18,9 +20,10 @@ const Header = (props) => {
 			}}
 		>
       
-			{location.pathname  !== '/' && ( // Show header logo on non-homepage pages
+			{isNotHomepage && ( // Show header logo on non-homepage pages
 				<img
 					src={logo}
+					alt="Stock Monkey Logo"
 					style={{
 						...(props.isMobile
 							? {
