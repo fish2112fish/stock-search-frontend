@@ -6,6 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import MenuList from './MenuList';
+import { useDispatch, useSelector } from 'react-redux';
+import { menuToggle } from '../store/menu';
 
 const drawerWidth = 240;
 
@@ -60,10 +62,15 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function MenuDrawer(props) {
-	const [open, setOpen] = React.useState(false);
+	const dispatch = useDispatch();
+	const menuOpen = useSelector((state) => state.menu.open);
 
-	const toggleDrawer = (v) => {
-		setOpen(v);
+	const toggleDrawer = (status) => {
+		dispatch(
+			menuToggle({
+				status: status
+			})
+		)
 	};
 
 	return (
@@ -75,7 +82,7 @@ export default function MenuDrawer(props) {
 				},
 			}}
 			variant="permanent"
-			open={open}
+			open={menuOpen}
 			onMouseEnter={() => toggleDrawer(true)}
 			onMouseLeave={() => toggleDrawer(false)}
 			onClick={() => toggleDrawer(false)}
@@ -83,11 +90,11 @@ export default function MenuDrawer(props) {
 		>
 			<DrawerHeader>
 				<IconButton>
-					{open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+					{menuOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
 				</IconButton>
 			</DrawerHeader>
 			<Divider />
-				<MenuList open={open} />
+				<MenuList open={menuOpen} />
 			<Divider />
 		</Drawer>
 	);

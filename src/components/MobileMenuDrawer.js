@@ -1,15 +1,25 @@
 import * as React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import MenuList from './MenuList';
 
-export default function MobileMenuDrawer() {
-	const [open, setOpen] = React.useState(false);
+import { menuToggle } from '../store/menu';
 
-	const toggleDrawer = (v) => {
-		setOpen(v);
+export default function MobileMenuDrawer() {
+
+	const dispatch = useDispatch();
+	const menuOpen = useSelector((state) => state.menu.open);
+
+	const toggleDrawer = (status) => {
+		dispatch(
+			menuToggle({
+				open: status
+			})
+		)
 	};
 
 	return (
@@ -29,7 +39,7 @@ export default function MobileMenuDrawer() {
 			>
 				<MenuIcon />
 			</IconButton>
-			<Drawer open={open} onClose={() => toggleDrawer(false)} onClick={() => toggleDrawer(false)}>
+			<Drawer open={menuOpen} onClose={() => toggleDrawer(false)} onClick={() => toggleDrawer(false)}>
 				<IconButton
 					size="large"
 					edge="start"
@@ -44,7 +54,7 @@ export default function MobileMenuDrawer() {
 				>
 					<CloseIcon />
 				</IconButton>
-				<MenuList open={open} />
+				<MenuList open={menuOpen} />
 			</Drawer>
 		</>
 	);
